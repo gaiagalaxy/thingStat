@@ -1,3 +1,4 @@
+#coding=utf-8
 """This file contains code for use with "Think Stats",
 by Allen B. Downey, available from greenteapress.com
 
@@ -148,16 +149,16 @@ class Pregnancies(Table):
             sequence of (name, start, end, type) tuples
         """
         return [
-            ('caseid', 1, 12, int),
+            ('caseid', 1, 12, int),#被调查者的整数 ID。
             ('nbrnaliv', 22, 22, int),
             ('babysex', 56, 56, int),
             ('birthwgt_lb', 57, 58, int),
             ('birthwgt_oz', 59, 60, int),
-            ('prglength', 275, 276, int),
-            ('outcome', 277, 277, int),
-            ('birthord', 278, 279, int),
+            ('prglength', 275, 276, int), #怀孕周期，单位是周。
+            ('outcome', 277, 277, int),#怀孕结果的整数代码。代码 1 表示活婴。
+            ('birthord', 278, 279, int),#正常出生的婴儿的顺序。例如，第一胎婴儿的编号是 1。如果没有 正常出生，该字段为空。
             ('agepreg', 284, 287, int),
-            ('finalwgt', 423, 440, float),
+            ('finalwgt', 423, 440, float),#被调查者的统计权重。这是一个浮点值，表示这名被调查者所代表 的人群在美国总人口中的比例。过采样人群的权重偏低。
             ]
 
     def Recode(self):
